@@ -2,15 +2,15 @@
 import React, {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
-import {useRouter} from "next/navigation";
+import {useParams, usePathname, useRouter} from "next/navigation";
 
 
-interface ITopic {
+export interface ITopic {
   value: string,
   label: string
 }
 
-const LIST_OF_TOPICS: ITopic[] = [
+export const LIST_OF_TOPICS: ITopic[] = [
   {
     label: "Програмування на Arduino",
     value: "arduino-programming", // href
@@ -20,7 +20,13 @@ const LIST_OF_TOPICS: ITopic[] = [
 function NavDrawer() {
   const [activeTab, setActiveTab] = useState<string | null>(null)
   const router = useRouter();
+  const params = usePathname()?.split("/")
 
+  useEffect(() => {
+    if (!params?.length) {
+      setActiveTab(null)
+    }
+  }, [params])
 
   useEffect(() => {
     if (activeTab) {
@@ -29,7 +35,7 @@ function NavDrawer() {
   }, [activeTab, router])
 
   return (
-    <div className="w-96  flex-col gap-y-4 items-start justify-center p-4 hidden lg:flex">
+    <div className="w-full lg:w-96 flex-col gap-y-4 items-start justify-center p-4 flex">
       <div className="flex justify-between items-center w-full p-2">
         <h2 className="font-semibold text-xl">
           Теми навчання

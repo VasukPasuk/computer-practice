@@ -24,7 +24,9 @@ export default function RootLayout({
       >
         <Navigation/>
         <main className="flex flex-row w-full items-start">
-          <NavDrawer/>
+          <div className="hidden lg:block">
+            <NavDrawer/>
+          </div>
           <div className="flex flex-col w-full">
             {children}
           </div>
