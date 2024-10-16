@@ -2,6 +2,7 @@ import {ARDUINO_PROGRAMMING_LABS} from "@/config/topic-list-data"
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
 import {SlChemistry} from "react-icons/sl";
+import Link from "next/link";
 
 function Page() {
   return (
@@ -26,14 +27,19 @@ function Page() {
               </div>
               <ul className="flex flex-row gap-x-4 flex-wrap gap-y-4">
                 {
-                  tasks.map((task) => (
+                  tasks.map((task, idx) => (
                     <Button
                       key={task.lab_name}
                       variant="secondary"
-                      className="hover:bg-black hover:text-white flex gap-x-2 items-center justify-start w-full md:w-fit p-8"
+                      className="hover:bg-black hover:text-white"
                     >
-                      <div className="block p-1 px-3 rounded-lg bg-black/5">{task.lab_number}</div>
-                      <div className="text-wrap line-clamp-2">{task.lab_name}</div>
+                      <Link
+                        href={`arduino-programming/lab${task.lab_number}`}
+                        className=" h-full flex gap-x-2 items-center justify-start w-full md:w-fit"
+                      >
+                        <div className="block p-1 px-3 rounded-lg bg-black/5">{task.lab_number}</div>
+                        <div className="text-wrap line-clamp-2">{task.lab_name}</div>
+                      </Link>
                     </Button>
                   ))
                 }
