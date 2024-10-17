@@ -47,27 +47,27 @@ void loop()
       <li>резистор. 220 Ом</li>
       <p>Також вам буде потрібна програма Arduino IDE, що можна загрузити з сайту Arduino.</p>
       <p>Breadboard представляє з себе сітку з гнізд, які зазвичай з&#39;єднуються так:</p>
-      {/*<div className="flex lg:flex-row lg:gap-x-16 flex-col gap-y-16 items-center justify-center my-16">*/}
-      {/*  <div className="relative w-64 h-32">*/}
-      {/*    <Image*/}
-      {/*      src={"/lab1-i-1.png"}*/}
-      {/*      alt={"Картинка до лабораторної роботи №1"}*/}
-      {/*      fill*/}
-      {/*      className="object-cover"*/}
-      {/*    />*/}
-      {/*  </div>*/}
-      {/*  <div className="relative w-96 h-72">*/}
-      {/*    <Image*/}
-      {/*      src={"/lab1-i-2.png"}*/}
-      {/*      alt={"Картинка до лабораторної роботи №1"}*/}
-      {/*      fill*/}
-      {/*      className="object-cover"*/}
-      {/*    />*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      {/*<p className="text-xl">*/}
-      {/*  Для роботи цієї моделі напишемо наступну програму (скетч):*/}
-      {/*</p>*/}
+      <div className="flex lg:flex-row lg:gap-x-16 flex-col gap-y-16 items-center justify-center my-16">
+        <div className="relative w-64 h-32">
+          <Image
+            src={"/lab1-i-1.png"}
+            alt={"Картинка до лабораторної роботи №1"}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative w-96 h-72">
+          <Image
+            src={"/lab1-i-2.png"}
+            alt={"Картинка до лабораторної роботи №1"}
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+      <p className="text-xl">
+        Для роботи цієї моделі напишемо наступну програму (скетч):
+      </p>
       <div className="relative">
         <SyntaxHighlighter
           language="cpp"
